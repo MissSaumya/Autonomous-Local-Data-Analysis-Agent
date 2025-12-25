@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Qwen3 Agent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Qwen3 4B: Autonomous Data Specialist</h1>
+        
+        <div class="card">
+            <input type="file" id="csvFile">
+            <button onclick="startProcess()">Start Multi-Stage Analysis</button>
+            
+            <div id="statusContainer" class="hidden">
+                <div class="loading-circle"></div>
+                <ul id="statusList">
+                    <li id="s1">⚪ Uploading Data...</li>
+                    <li id="s2">⚪ Identifying Dataset...</li>
+                    <li id="s3">⚪ Cleaning & Prepping...</li>
+                    <li id="s4">⚪ Generating EDA & Visuals...</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="resultSection" class="hidden">
+            <div id="datasetInfo" class="info-box"></div>
+            <img id="edaPlot" src="">
+            <div id="edaContent" class="results-box"></div>
+        </div>
+
+        <div class="card">
+            <input type="text" id="userQuery" placeholder="Ask a question...">
+            <button onclick="askAgent()">Ask</button>
+        </div>
+        <div id="answer" class="results-box"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

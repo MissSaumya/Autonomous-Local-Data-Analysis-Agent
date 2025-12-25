@@ -1,0 +1,10 @@
+flask
+pandas
+langchain
+langchain-community
+langchain-experimental
+langchain-ollama
+tabulate
+markdown
+matplotlib
+seaborn
